@@ -76,7 +76,7 @@ def delete_rep(items,cookie):
         # print(set_ret)
         soup = BeautifulSoup(set_ret, 'lxml')
         res = soup.find_all("form", attrs={"class": "js-normalize-submit"})
-        token = res[0].find('input', attrs={'name': 'authenticity_token'})
+        token = res[1].find('input', attrs={'name': 'authenticity_token'})
         token = token["value"]
         # print(token)
         delete_url = setting_url + '/delete'
